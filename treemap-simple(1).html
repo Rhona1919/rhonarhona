@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    series: [{
+        type: 'treemap',
+        data: [{
+            name: 'nodeA',            // First tree
+            value: 8800,
+            children: [{
+                name: 'Jackson Yee',       // First leaf of first tree
+                value: 4200
+            }, {
+                name: 'Chen Linong',       // Second leaf of first tree
+                value: 2800
+            },{
+                name: 'Dilraba Dilmurat',       // Third leaf of first tree
+                value: 1800
+            }]
+        }, {
+            name: 'nodeB',            // Second tree
+            value: 1969.3,
+            children: [{
+                name: 'Jackson Wang',       // First leaf of second tree
+                value: 725
+            },{
+                name:'Kris Wu',       //  Second leaf of second tree
+                value: 816
+            },{
+                name:'William Chan',       // Thind leaf of secomd tree
+                value: 428.3
+            }]
+        },{
+            name:'nodeC',            // Third treemap
+            value: 400.6,
+            children: [{
+                name:'Ouyang Nana',       // First leaf of third tree
+                value: 6.2
+            },{
+                name:'G.E.M',       // Second leaf of third tree
+                value: 58 
+            },{
+                name:'Yang Chaoyue',       // Third leaf of third tree 
+                value: 336.4 
+            }]
+        }]
+    }]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

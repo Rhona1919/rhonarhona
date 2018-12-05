@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <div id="table" style="height: 100%"></div>
+   <body style="height: 100%; margin: 0">
+       
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+
+var dom2 = document.getElementById("table");
+var myChart3 = echarts.init(dom2);
+var app = {};
+option3 = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'none'
+        },
+        formatter: function (params) {
+            return params[0].name + ': ' + params[0].value;
+        }
+    },
+    xAxis: {
+       data: ['陈伟霆', '迪丽热巴', '易烊千玺', '吴亦凡', '王嘉尔','陈立农','杨超越','邓紫棋','欧阳娜娜'],
+        axisTick: {show: false},
+        axisLine: {show: false},
+        axisLabel: {
+            textStyle: {
+                color: '#e14022'
+            }
+        }
+    },
+    yAxis: {
+        splitLine: {show: false},
+        axisTick: {show: false},
+        axisLine: {show: false},
+        axisLabel: {show: false}
+    },
+    color: ['#e14022'],
+    series: [{
+        name: 'hill',
+        type: 'pictorialBar',
+        barCategoryGap: '-200%',
+        // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
+        symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+        itemStyle: {
+            normal: {
+                opacity: 0.5
+            },
+            emphasis: {
+                opacity: 1
+            }
+        },
+        data: [36, 56, 65, 44, 19, 9, 4, 28, 12],
+        z: 10
+    }, {
+        name: 'glyph',
+        type: 'pictorialBar',
+        barGap: '-100%',
+        
+    }]
+};
+;
+if (option3 && typeof option3 === "object") {
+    myChart3.setOption(option3, true);
+}
+       </script>
+   </body>
+</html>
